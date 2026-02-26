@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { api } from "./api";
+import Link from "next/link";
 
 export default async function Home() {
   const data = await api.hello.get();
@@ -24,6 +25,12 @@ export default async function Home() {
             <p>NIM : {data.nim}</p>
           </div>
         </div>
+        <Link
+          href="/about"
+          className=" flex items-center justify-center gap-2 rounded-xl bg-zinc-900 px-6 py-3 font-semibold text-white transition-all hover:bg-zinc-800 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200"
+        >
+          About Me
+        </Link>
       </main>
     </div>
   );
